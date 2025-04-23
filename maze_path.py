@@ -30,12 +30,12 @@ def main():
 
         rl.BeginDrawing()
 
-        rl.ClearBackground(rl.BLACK)
+        rl.ClearBackground(rl.WHITE)
 
         for y in range(len(mz)):
             for x in range(len(mz[y])):
                 if mz[y][x] == 1:
-                    rl.DrawRectangle(x*10, y*10, 10, 10, rl.WHITE)
+                    rl.DrawRectangle(x*10, y*10, 10, 10, rl.BLACK)
                 if mz[y][x] == 2 and solve:
                     rl.DrawRectangle(x*10, y*10, 10, 10, rl.GREEN)
                 if mz[y][x] == 3:
@@ -79,7 +79,7 @@ def generate_maze(width, height):
     maze[entrance_y, entrance_x] = 0
     maze[exit_y, exit_x] = 0
 
-    # Start position for maze generation
+    # Start position for maze generation1
     start_x, start_y = entrance_x if entrance_y in [0, height - 1] else entrance_x + 1, entrance_y if entrance_x in [0, width - 1] else entrance_y + 1
     # maze[start_y-1, start_x-1] = 0
 
